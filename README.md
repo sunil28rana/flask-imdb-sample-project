@@ -12,7 +12,7 @@ How it works
 4. Activate the newly created environment by `source venv/bin/activate`
 5. Run `pip install -r requirements.txt` to install all required dependencies.
 6. `cp .env.example .env` to copy the example configuration file
-6. Start the Flask application on your original terminal window: `venv/bin/python app.py`.
-7. Go to `http://localhost:5000/` to see if the application is working.
-8. Go to `http://localhost:5000/admin/doc` for admin API documentation.
-9. Go to `http://localhost:5000/v1/doc` for users API documentation.
+7. Start the Flask application on your original terminal window: `venv/bin/python app.py`.
+8. Go to `http://localhost:5000/` to see if the application is working.
+9. Go to `http://localhost:5000/admin/doc` for admin API documentation.
+10. Go to `http://localhost:5000/v1/doc` for users API documentation.
