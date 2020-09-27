@@ -16,7 +16,6 @@ def authorization_required(fn):
     def wrapper(self, *args, **kwargs):
 
         authorization = request.headers.get('Authorization')
-        print(authorization)
         if not authorization:
             return {'status': False,
                     'data': None,

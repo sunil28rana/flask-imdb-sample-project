@@ -36,12 +36,14 @@ def add_movie(name: str, director: str, ninety_nine_popularity: float, imdb_scor
         return False, e
 
 
-def update_movie(movie: Movie, name: str, director: str, ninety_nine_popularity: float, imdb_score: float, genres: List[str]) -> bool:
+def update_movie(movie: Movie, name: str, director: str, ninety_nine_popularity: float, imdb_score: float,
+                 genres: List[str], is_deleted: bool) -> bool:
     try:
         movie.name = name.title()
         movie.director = director.title()
         movie.imdb_score = round(imdb_score, 1)
         movie.ninety_nine_popularity = round(ninety_nine_popularity, 1)
+        movie.is_deleted = is_deleted
         movie.updated_at = datetime.utcnow()
 
         for genre in movie.genres:
@@ -79,7 +81,8 @@ def delete_movie(movie_id: int) -> bool:
 
 def get_movies(
         name: Optional[str] or None = None, director: Optional[str] = None,
-        imdb_score: Optional[float] = None, ninety_nine_popularity: Optional[float] = None, genres: Optional[List[str]] = None,
+        imdb_score: Optional[float] = None, ninety_nine_popularity: Optional[float] = None,
+        genres: Optional[List[str]] = None,
         is_deleted: bool = False, offset: int = 1, limit: int = 20
 ) -> List[Movie]:
     movies = Movie.query

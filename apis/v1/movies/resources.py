@@ -10,7 +10,7 @@ class Movie(Resource):
     def get(self, id):
         """Get a movie by it's id"""
         movie = get_movie_by_id(movie_id=id)
-        if movie is None:
+        if movie is None or movie.is_deleted:
             return {
                        'status': False,
                        'message': "Couldn't find a movie with id {}".format(id)
