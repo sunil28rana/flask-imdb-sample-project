@@ -1,7 +1,7 @@
 FLASK-SQLite IMDB SAMPLE PROJECT
 =======================
 
-This is a sample project.
+This is a Flask-SQLite project.
 
 How it works
 -----------
